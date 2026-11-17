@@ -127,8 +127,3 @@ Listo para segmentación (K-means, jerárquico, DBSCAN) y modelos predictivos.
 - **Métricas:** matriz de confusión, accuracy, precisión, recall, F1.
 - **Sobreajuste:** controlado con `max_depth=4` (modelo 1) y `max_depth=3` (modelo 2).
 - **Conclusión:** las variables exógenas predicen parcialmente el riesgo; en Checkpoint 3 se probará regresión logística.
-
-## Técnica complementaria
-
-⏳ Pendiente — la profesora compartirá el material en la próxima sesión.
-

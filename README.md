@@ -106,3 +106,29 @@ Listo para segmentación (K-means, jerárquico, DBSCAN) y modelos predictivos.
 - matplotlib
 - Google Colab
 - GitHub
+
+## Segmentación y asociación — Checkpoint 2
+
+- **Variables usadas:** `Fallecidos_escalado` + `log_ratio_reciente_escalado`.
+- **K-means:** k=3 elegido por método del codo.
+  - Cluster 0 — Tramos de alto riesgo histórico (24.02 fallecidos promedio, 46 tramos).
+  - Cluster 1 — Tramos de riesgo medio y estable (11.06 fallecidos, 170 tramos).
+  - Cluster 2 — Tramos de bajo riesgo histórico con tendencia al alza (5.95 fallecidos, ratio 72.55, 100 tramos).
+- **Jerárquico:** coincide 100% con K-means en los dos clusters extremos.
+- **DBSCAN:** eps=0.3 da 3 clusters + 26 outliers (8.2%). Los otros eps colapsan a 1-2 clusters.
+- **Apriori:** NO aplica — el dataset tiene una fila por tramo, sin estructura de canasta.
+- **Dataset exportado:** `data/dataset_segmentado.csv` (316 × 38).
+
+## Modelo predictivo y evaluación — Checkpoint 2
+
+- **Objetivo:** `nivel_riesgo_Alto` (binario).
+- **Modelo 1 (con fuga):** incluye `Fallecidos` → accuracy alto por fuga de datos (documentado).
+- **Modelo 2 (sin fuga):** excluye `Fallecidos` → accuracy honesto usando solo variables exógenas.
+- **Métricas:** matriz de confusión, accuracy, precisión, recall, F1.
+- **Sobreajuste:** controlado con `max_depth=4` (modelo 1) y `max_depth=3` (modelo 2).
+- **Conclusión:** las variables exógenas predicen parcialmente el riesgo; en Checkpoint 3 se probará regresión logística.
+
+## Técnica complementaria
+
+⏳ Pendiente — la profesora compartirá el material en la próxima sesión.
+

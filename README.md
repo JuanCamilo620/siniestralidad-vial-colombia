@@ -58,7 +58,7 @@ siniestralidad-vial-colombia/
 - ✅ Checkpoint 2 (Segmentación): K-means, jerárquico y DBSCAN con interpretación de clusters
 - ✅ Checkpoint 2 (Modelo predictivo): Árbol de decisión con y sin fuga de datos, métricas completas
 - ✅ Checkpoint 2 (Técnica complementaria): Detección de anomalías con Isolation Forest
-- ⏳ Checkpoint 3 (Producto final): En construcción
+- ✅ Checkpoint 3 (Producto final): Dashboard, resumen ejecutivo, documentación y ficha de ética completos
 
 ## Decisión de cruce
 

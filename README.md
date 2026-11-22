@@ -127,3 +127,16 @@ Listo para segmentación (K-means, jerárquico, DBSCAN) y modelos predictivos.
 - **Métricas:** matriz de confusión, accuracy, precisión, recall, F1.
 - **Sobreajuste:** controlado con `max_depth=4` (modelo 1) y `max_depth=3` (modelo 2).
 - **Conclusión:** las variables exógenas predicen parcialmente el riesgo; en Checkpoint 3 se probará regresión logística.
+
+## Sección 3 — Técnica complementaria elegida: Detección de anomalías
+
+- **Técnica:** Isolation Forest (Unidad 7, Ruta 1 — Anomalías).
+- **Variables usadas:** `Fallecidos_escalado` + `log_ratio_reciente_escalado`.
+- **Configuraciones comparadas:**
+  - `contamination=0.05` (5%): 15 anomalías detectadas (4.7%).
+  - `contamination=0.10` (10%): 32 anomalías detectadas (10.1%).
+  - `contamination=0.15` (15%): 48 anomalías detectadas (15.2%).
+- **Perfil de las anomalías (contamination=5%):** los tramos anómalos tienen 20.20 fallecidos promedio (vs 10.89 en los normales) y un ratio reciente/histórico de 208.79 (vs 18.97). Es decir, el algoritmo detecta tramos con combinaciones extremas de letalidad y deterioro reciente.
+- **Ficha de limitaciones:** documentada en el notebook (Sección 3.5). El parámetro `contamination` es una decisión de diseño, la técnica detecta anomalías estadísticas (no necesariamente errores), y los falsos positivos podrían llevar a descartar tramos que sí requieren intervención.
+- **Dataset exportado:** `data/dataset_con_anomalias.csv` (316 × 42).
+
